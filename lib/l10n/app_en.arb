@@ -46,10 +46,10 @@
 
   "userLikes": "Likes",
   "userFavorites": "Favorites",
-  "userFollows": "Follows",
+  "userFollows": "Following",
   "userComments": "Comments",
   "userFollowing": "Following",
-  "userNotFollow": "Not follow",
+  "userNotFollow": "Follow",
   "userSignInOrUp": "Sign in/Sign up",
 
   "durationYears": "{many, plural, =1{1 year}other{{many} years}} ago",

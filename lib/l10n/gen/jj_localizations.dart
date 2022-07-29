@@ -283,7 +283,7 @@ abstract class JJLocalizations {
   /// No description provided for @userFollows.
   ///
   /// In en, this message translates to:
-  /// **'Follows'**
+  /// **'Following'**
   String get userFollows;
 
   /// No description provided for @userComments.
@@ -301,7 +301,7 @@ abstract class JJLocalizations {
   /// No description provided for @userNotFollow.
   ///
   /// In en, this message translates to:
-  /// **'Not follow'**
+  /// **'Follow'**
   String get userNotFollow;
 
   /// No description provided for @userSignInOrUp.

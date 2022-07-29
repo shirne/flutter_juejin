@@ -107,7 +107,7 @@ class JJLocalizationsEn extends JJLocalizations {
   String get userFavorites => 'Favorites';
 
   @override
-  String get userFollows => 'Follows';
+  String get userFollows => 'Following';
 
   @override
   String get userComments => 'Comments';
@@ -116,7 +116,7 @@ class JJLocalizationsEn extends JJLocalizations {
   String get userFollowing => 'Following';
 
   @override
-  String get userNotFollow => 'Not follow';
+  String get userNotFollow => 'Follow';
 
   @override
   String get userSignInOrUp => 'Sign in/Sign up';
