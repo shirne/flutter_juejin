@@ -100,11 +100,23 @@ abstract class JJLocalizations {
   /// **'Juejin'**
   String get appTitle;
 
+  /// No description provided for @exceptionAuthenticationExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication has expired, please login manually.'**
+  String get exceptionAuthenticationExpired;
+
   /// No description provided for @exceptionError.
   ///
   /// In en, this message translates to:
   /// **'error'**
   String get exceptionError;
+
+  /// No description provided for @exceptionErrorWidget.
+  ///
+  /// In en, this message translates to:
+  /// **'Exception thrown during building this widget...'**
+  String get exceptionErrorWidget;
 
   /// No description provided for @exceptionFailed.
   ///
@@ -112,11 +124,17 @@ abstract class JJLocalizations {
   /// **'failed'**
   String get exceptionFailed;
 
-  /// No description provided for @exceptionErrorWidget.
+  /// No description provided for @exceptionPoorNetwork.
   ///
   /// In en, this message translates to:
-  /// **'Exception thrown during building this widget...'**
-  String get exceptionErrorWidget;
+  /// **'Poor network condition, please retry later.'**
+  String get exceptionPoorNetwork;
+
+  /// No description provided for @exceptionRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Request error: (-1 {message})'**
+  String exceptionRequest(Object message);
 
   /// No description provided for @exceptionRouteNotFound.
   ///
@@ -190,173 +208,137 @@ abstract class JJLocalizations {
   /// **'Web page'**
   String get webViewTitle;
 
-  /// No description provided for @tabHome.
+  /// No description provided for @navHome.
   ///
   /// In en, this message translates to:
   /// **'Home'**
-  String get tabHome;
+  String get navHome;
 
-  /// No description provided for @tabPins.
+  /// No description provided for @navPins.
   ///
   /// In en, this message translates to:
   /// **'Pins'**
-  String get tabPins;
+  String get navPins;
 
-  /// No description provided for @tabMe.
+  /// No description provided for @navMe.
   ///
   /// In en, this message translates to:
-  /// **'Profile'**
-  String get tabMe;
+  /// **'Me'**
+  String get navMe;
 
-  /// No description provided for @like.
+  /// No description provided for @actionLike.
   ///
   /// In en, this message translates to:
   /// **'Like'**
-  String get like;
+  String get actionLike;
 
-  /// No description provided for @comment.
+  /// No description provided for @actionComment.
   ///
   /// In en, this message translates to:
   /// **'Comment'**
-  String get comment;
+  String get actionComment;
 
-  /// No description provided for @unfold.
+  /// No description provided for @actionMore.
   ///
   /// In en, this message translates to:
-  /// **'See more'**
-  String get unfold;
+  /// **'More'**
+  String get actionMore;
 
-  /// No description provided for @ad.
+  /// No description provided for @advertiseAbbr.
   ///
   /// In en, this message translates to:
   /// **'Ad'**
-  String get ad;
+  String get advertiseAbbr;
 
-  /// No description provided for @likes.
+  /// No description provided for @articleViews.
   ///
   /// In en, this message translates to:
-  /// **'Likes'**
-  String get likes;
+  /// **'{num} views'**
+  String articleViews(int num);
 
-  /// No description provided for @comments.
-  ///
-  /// In en, this message translates to:
-  /// **'Comments'**
-  String get comments;
-
-  /// No description provided for @favourites.
-  ///
-  /// In en, this message translates to:
-  /// **'Favourites'**
-  String get favourites;
-
-  /// No description provided for @following.
-  ///
-  /// In en, this message translates to:
-  /// **'Following'**
-  String get following;
-
-  /// No description provided for @numLikes.
-  ///
-  /// In en, this message translates to:
-  /// **'{num} likes'**
-  String get numLikes;
-
-  /// No description provided for @liked.
+  /// No description provided for @pinLiked.
   ///
   /// In en, this message translates to:
   /// **'and others liked'**
-  String get liked;
+  String get pinLiked;
 
-  /// No description provided for @followingText.
+  /// No description provided for @pinHotCommentLikes.
+  ///
+  /// In en, this message translates to:
+  /// **'{num} likes'**
+  String pinHotCommentLikes(int num);
+
+  /// No description provided for @userLikes.
+  ///
+  /// In en, this message translates to:
+  /// **'Likes'**
+  String get userLikes;
+
+  /// No description provided for @userFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get userFavorites;
+
+  /// No description provided for @userFollows.
+  ///
+  /// In en, this message translates to:
+  /// **'Follows'**
+  String get userFollows;
+
+  /// No description provided for @userComments.
+  ///
+  /// In en, this message translates to:
+  /// **'Comments'**
+  String get userComments;
+
+  /// No description provided for @userFollowing.
   ///
   /// In en, this message translates to:
   /// **'Following'**
-  String get followingText;
+  String get userFollowing;
 
-  /// No description provided for @unfollowText.
+  /// No description provided for @userNotFollow.
   ///
   /// In en, this message translates to:
-  /// **'Follow'**
-  String get unfollowText;
+  /// **'Not follow'**
+  String get userNotFollow;
 
-  /// No description provided for @views.
-  ///
-  /// In en, this message translates to:
-  /// **'Views'**
-  String get views;
-
-  /// No description provided for @signInOrUp.
+  /// No description provided for @userSignInOrUp.
   ///
   /// In en, this message translates to:
   /// **'Sign in/Sign up'**
-  String get signInOrUp;
-
-  /// No description provided for @durationYear.
-  ///
-  /// In en, this message translates to:
-  /// **' year'**
-  String get durationYear;
+  String get userSignInOrUp;
 
   /// No description provided for @durationYears.
   ///
   /// In en, this message translates to:
-  /// **' years'**
-  String get durationYears;
-
-  /// No description provided for @durationMonth.
-  ///
-  /// In en, this message translates to:
-  /// **' month'**
-  String get durationMonth;
+  /// **'{many, plural, =1{year}other{years}} ago'**
+  String durationYears(num many);
 
   /// No description provided for @durationMonths.
   ///
   /// In en, this message translates to:
-  /// **' months'**
-  String get durationMonths;
-
-  /// No description provided for @durationDay.
-  ///
-  /// In en, this message translates to:
-  /// **' day'**
-  String get durationDay;
+  /// **'{many, plural, =1{month}other{months}} ago'**
+  String durationMonths(num many);
 
   /// No description provided for @durationDays.
   ///
   /// In en, this message translates to:
-  /// **' days'**
-  String get durationDays;
-
-  /// No description provided for @durationHour.
-  ///
-  /// In en, this message translates to:
-  /// **' hour'**
-  String get durationHour;
+  /// **'{many, plural, =1{day}other{days}} ago'**
+  String durationDays(num many);
 
   /// No description provided for @durationHours.
   ///
   /// In en, this message translates to:
-  /// **' hours'**
-  String get durationHours;
-
-  /// No description provided for @durationMinute.
-  ///
-  /// In en, this message translates to:
-  /// **' minute'**
-  String get durationMinute;
+  /// **'{many, plural, =1{hour}other{hours}} ago'**
+  String durationHours(num many);
 
   /// No description provided for @durationMinutes.
   ///
   /// In en, this message translates to:
-  /// **' minutes'**
-  String get durationMinutes;
-
-  /// No description provided for @durationAgo.
-  ///
-  /// In en, this message translates to:
-  /// **' ago'**
-  String get durationAgo;
+  /// **'{many, plural, =1{minute}other{minutes}} ago'**
+  String durationMinutes(num many);
 }
 
 class _JJLocalizationsDelegate extends LocalizationsDelegate<JJLocalizations> {

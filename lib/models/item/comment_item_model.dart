@@ -81,8 +81,10 @@ class CommentInfo extends DataModel {
   final bool isBury;
   final int level;
 
-  DateTime get createTime {
-    return (ctime * 1000).toDateTimeInMilliseconds;
+  String createTimeString(BuildContext context) {
+    return DateTime.now()
+        .difference((ctime * 1000).toDateTimeInMilliseconds)
+        .differenceString(context);
   }
 
   @override

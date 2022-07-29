@@ -1,6 +1,6 @@
 
 
-
+import 'package:intl/intl.dart' as intl;
 import 'jj_localizations.dart';
 
 /// The translations for English (`en`).
@@ -11,13 +11,24 @@ class JJLocalizationsEn extends JJLocalizations {
   String get appTitle => 'Juejin';
 
   @override
+  String get exceptionAuthenticationExpired => 'Authentication has expired, please login manually.';
+
+  @override
   String get exceptionError => 'error';
+
+  @override
+  String get exceptionErrorWidget => 'Exception thrown during building this widget...';
 
   @override
   String get exceptionFailed => 'failed';
 
   @override
-  String get exceptionErrorWidget => 'Exception thrown during building this widget...';
+  String get exceptionPoorNetwork => 'Poor network condition, please retry later.';
+
+  @override
+  String exceptionRequest(Object message) {
+    return 'Request error: (-1 $message)';
+  }
 
   @override
   String get exceptionRouteNotFound => ' route not found。';
@@ -56,86 +67,117 @@ class JJLocalizationsEn extends JJLocalizations {
   String get webViewTitle => 'Web page';
 
   @override
-  String get tabHome => 'Home';
+  String get navHome => 'Home';
 
   @override
-  String get tabPins => 'Pins';
+  String get navPins => 'Pins';
 
   @override
-  String get tabMe => 'Profile';
+  String get navMe => 'Me';
 
   @override
-  String get like => 'Like';
+  String get actionLike => 'Like';
 
   @override
-  String get comment => 'Comment';
+  String get actionComment => 'Comment';
 
   @override
-  String get unfold => 'See more';
+  String get actionMore => 'More';
 
   @override
-  String get ad => 'Ad';
+  String get advertiseAbbr => 'Ad';
 
   @override
-  String get likes => 'Likes';
+  String articleViews(int num) {
+    return '$num views';
+  }
 
   @override
-  String get comments => 'Comments';
+  String get pinLiked => 'and others liked';
 
   @override
-  String get favourites => 'Favourites';
+  String pinHotCommentLikes(int num) {
+    return '$num likes';
+  }
 
   @override
-  String get following => 'Following';
+  String get userLikes => 'Likes';
 
   @override
-  String get numLikes => '{num} likes';
+  String get userFavorites => 'Favorites';
 
   @override
-  String get liked => 'and others liked';
+  String get userFollows => 'Follows';
 
   @override
-  String get followingText => 'Following';
+  String get userComments => 'Comments';
 
   @override
-  String get unfollowText => 'Follow';
+  String get userFollowing => 'Following';
 
   @override
-  String get views => 'Views';
+  String get userNotFollow => 'Not follow';
 
   @override
-  String get signInOrUp => 'Sign in/Sign up';
+  String get userSignInOrUp => 'Sign in/Sign up';
 
   @override
-  String get durationYear => ' year';
+  String durationYears(num many) {
+    final String pluralString = intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      one: 'year',
+      other: 'years',
+    );
+
+    return '$pluralString ago';
+  }
 
   @override
-  String get durationYears => ' years';
+  String durationMonths(num many) {
+    final String pluralString = intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      one: 'month',
+      other: 'months',
+    );
+
+    return '$pluralString ago';
+  }
 
   @override
-  String get durationMonth => ' month';
+  String durationDays(num many) {
+    final String pluralString = intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      one: 'day',
+      other: 'days',
+    );
+
+    return '$pluralString ago';
+  }
 
   @override
-  String get durationMonths => ' months';
+  String durationHours(num many) {
+    final String pluralString = intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      one: 'hour',
+      other: 'hours',
+    );
+
+    return '$pluralString ago';
+  }
 
   @override
-  String get durationDay => ' day';
+  String durationMinutes(num many) {
+    final String pluralString = intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      one: 'minute',
+      other: 'minutes',
+    );
 
-  @override
-  String get durationDays => ' days';
-
-  @override
-  String get durationHour => ' hour';
-
-  @override
-  String get durationHours => ' hours';
-
-  @override
-  String get durationMinute => ' minute';
-
-  @override
-  String get durationMinutes => ' minutes';
-
-  @override
-  String get durationAgo => ' ago';
+    return '$pluralString ago';
+  }
 }

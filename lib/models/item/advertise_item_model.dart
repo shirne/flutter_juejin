@@ -73,8 +73,10 @@ class AdvertiseItemModel extends DataModel {
   final int status;
   final UserInfoModel itemUserInfo;
 
-  DateTime get createTime {
-    return ((int.tryParse(ctime) ?? 0) * 1000).toDateTimeInMilliseconds;
+  String createTimeString(BuildContext context) {
+    return DateTime.now()
+        .difference((int.parse(ctime) * 1000).toDateTimeInMilliseconds)
+        .differenceString(context);
   }
 
   @override
@@ -82,34 +84,34 @@ class AdvertiseItemModel extends DataModel {
 
   @override
   List<Object?> get props => <Object>[
-        id,
-        advertId,
-        userId,
-        itemId,
-        itemType,
-        platform,
-        layout,
-        position,
-        advertType,
-        stationType,
-        authorName,
-        authorId,
-        title,
-        brief,
-        url,
-        picture,
-        avatar,
-        startTime,
-        endTime,
-        ctime,
-        mtime,
-        saleCount,
-        salePrice,
-        discountRate,
-        diggCount,
-        topic,
-        topicId,
-        status,
-        itemUserInfo,
-      ];
+    id,
+    advertId,
+    userId,
+    itemId,
+    itemType,
+    platform,
+    layout,
+    position,
+    advertType,
+    stationType,
+    authorName,
+    authorId,
+    title,
+    brief,
+    url,
+    picture,
+    avatar,
+    startTime,
+    endTime,
+    ctime,
+    mtime,
+    saleCount,
+    salePrice,
+    discountRate,
+    diggCount,
+    topic,
+    topicId,
+    status,
+    itemUserInfo,
+  ];
 }

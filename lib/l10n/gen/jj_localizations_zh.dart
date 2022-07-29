@@ -1,6 +1,6 @@
 
 
-
+import 'package:intl/intl.dart' as intl;
 import 'jj_localizations.dart';
 
 /// The translations for Chinese (`zh`).
@@ -11,13 +11,24 @@ class JJLocalizationsZh extends JJLocalizations {
   String get appTitle => '掘金';
 
   @override
+  String get exceptionAuthenticationExpired => '身份已失效，请重新登录';
+
+  @override
   String get exceptionError => '错误';
+
+  @override
+  String get exceptionErrorWidget => '构建时遇到未知错误...';
 
   @override
   String get exceptionFailed => '失败';
 
   @override
-  String get exceptionErrorWidget => '构建时遇到未知错误...';
+  String get exceptionPoorNetwork => '网络状况差，请稍后重试';
+
+  @override
+  String exceptionRequest(Object message) {
+    return '请求失败：(-1 $message)';
+  }
 
   @override
   String get exceptionRouteNotFound => '路由。';
@@ -56,86 +67,102 @@ class JJLocalizationsZh extends JJLocalizations {
   String get webViewTitle => '网页链接';
 
   @override
-  String get tabHome => '首页';
+  String get navHome => '首页';
 
   @override
-  String get tabPins => '沸点';
+  String get navPins => '沸点';
 
   @override
-  String get tabMe => '我';
+  String get navMe => '我';
 
   @override
-  String get like => '点赞';
+  String get actionLike => '赞';
 
   @override
-  String get comment => '评论';
+  String get actionComment => '评论';
 
   @override
-  String get unfold => '展开';
+  String get actionMore => '展开';
 
   @override
-  String get ad => '广告';
+  String get advertiseAbbr => '广告';
 
   @override
-  String get likes => '点赞';
+  String articleViews(int num) {
+    return '阅读 $num';
+  }
 
   @override
-  String get comments => '评论';
+  String get pinLiked => '等人赞过';
 
   @override
-  String get favourites => '收藏';
+  String pinHotCommentLikes(int num) {
+    return '$num人赞';
+  }
 
   @override
-  String get following => '关注';
+  String get userLikes => '点赞';
 
   @override
-  String get numLikes => '{num}人赞';
+  String get userFavorites => '收藏';
 
   @override
-  String get liked => '等人赞过';
+  String get userFollows => '关注';
 
   @override
-  String get followingText => '已关注';
+  String get userComments => '评论';
 
   @override
-  String get unfollowText => '未关注';
+  String get userFollowing => '已关注';
 
   @override
-  String get views => '阅读';
+  String get userNotFollow => '未关注';
 
   @override
-  String get signInOrUp => '登录/注册';
+  String get userSignInOrUp => '登录/注册';
 
   @override
-  String get durationYear => '年';
+  String durationYears(num many) {
+    return intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      other: '年前',
+    );
+  }
 
   @override
-  String get durationYears => '年';
+  String durationMonths(num many) {
+    return intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      other: '月前',
+    );
+  }
 
   @override
-  String get durationMonth => '月';
+  String durationDays(num many) {
+    return intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      other: '天前',
+    );
+  }
 
   @override
-  String get durationMonths => '月';
+  String durationHours(num many) {
+    return intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      other: '小时前',
+    );
+  }
 
   @override
-  String get durationDay => '天';
-
-  @override
-  String get durationDays => '天';
-
-  @override
-  String get durationHour => '小时';
-
-  @override
-  String get durationHours => '小时';
-
-  @override
-  String get durationMinute => '分钟';
-
-  @override
-  String get durationMinutes => '分钟';
-
-  @override
-  String get durationAgo => '前';
+  String durationMinutes(num many) {
+    return intl.Intl.pluralLogic(
+      many,
+      locale: localeName,
+      other: '分钟前',
+    );
+  }
 }
