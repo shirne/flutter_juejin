@@ -1,51 +1,30 @@
+// Copyright 2022 The FlutterCandies author. All rights reserved.
+// Use of this source code is governed by a MIT license that can be found in the
+// LICENSE file.
+
 import 'dart:math' as math;
 
-import '../l10n/gen/jj_localizations.dart';
-import '../l10n/gen/jj_localizations_zh.dart';
+import 'package:flutter/widgets.dart';
+
+import 'build_context_extension.dart';
 
 extension DurationExtension on Duration {
-  Future<void> get delay => Future<void>.delayed(this);
+Future<void> get delay => Future<void>.delayed(this);
 
-  String differenceString([JJLocalizations? jjLocalizations]) {
-    final localization = jjLocalizations ?? JJLocalizationsZh();
-    final int count;
-    final String unit;
-    if (this >= const Duration(days: 365)) {
-      count = inDays ~/ 365;
-      if (count > 1) {
-        unit = localization.durationYears;
-      } else {
-        unit = localization.durationYear;
-      }
-    } else if (this >= const Duration(days: 30)) {
-      count = inDays ~/ 30;
-      if (count > 1) {
-        unit = localization.durationMonths;
-      } else {
-        unit = localization.durationMonth;
-      }
-    } else if (this >= const Duration(days: 1)) {
-      count = inDays;
-      if (count > 1) {
-        unit = localization.durationDays;
-      } else {
-        unit = localization.durationDay;
-      }
-    } else if (this >= const Duration(hours: 1)) {
-      count = inHours;
-      if (count > 1) {
-        unit = localization.durationHours;
-      } else {
-        unit = localization.durationHour;
-      }
-    } else {
-      count = math.max(1, inMinutes);
-      if (count > 1) {
-        unit = localization.durationMinutes;
-      } else {
-        unit = localization.durationMinute;
-      }
-    }
-    return '$count$unit${localization.durationAgo}';
-  }
+String differenceString(BuildContext context) {
+final localization = context.l10n;
+if (this >= const Duration(days: 365)) {
+return localization.durationYears(inDays ~/ 365);
+}
+if (this >= const Duration(days: 30)) {
+return localization.durationMonths(inDays ~/ 30);
+}
+if (this >= const Duration(days: 1)) {
+return localization.durationDays(inDays);
+}
+if (this >= const Duration(hours: 1)) {
+return localization.durationHours(inHours);
+}
+return localization.durationMinutes(math.max(1, inMinutes));
+}
 }

@@ -86,11 +86,7 @@ class _ArticleWidget extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text(
-              DateTime.now()
-                  .difference(article.articleInfo.createTime)
-                  .differenceString(context.l10n),
-            ),
+            child: Text(article.articleInfo.createTimeString(context)),
           ),
         ],
       ),
@@ -143,7 +139,7 @@ class _ArticleWidget extends StatelessWidget {
       children: <Widget>[
         const Icon(Icons.thumb_up_alt_outlined),
         const Gap.h(4),
-        Text(count == 0 ? context.l10n.like : '$count'),
+        Text(count == 0 ? context.l10n.actionLike : '$count'),
       ],
     );
   }
@@ -154,7 +150,7 @@ class _ArticleWidget extends StatelessWidget {
       children: <Widget>[
         const Icon(Icons.message_outlined),
         const Gap.h(4),
-        Text(count == 0 ? context.l10n.comment : '$count'),
+        Text(count == 0 ? context.l10n.actionComment : '$count'),
       ],
     );
   }
@@ -259,11 +255,8 @@ class _AdvertiseWidget extends StatelessWidget {
               color: context.theme.dividerColor,
             ),
           ),
-          Text(
-            DateTime.now()
-                .difference(ad.createTime)
-                .differenceString(context.l10n),
-          ),
+
+          Text(ad.createTimeString(context)),
           const Spacer(),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
@@ -271,7 +264,10 @@ class _AdvertiseWidget extends StatelessWidget {
               borderRadius: RadiusConstants.r2,
               color: context.theme.dividerColor.withOpacity(.05),
             ),
-            child: Text(context.l10n.ad, style: context.textTheme.caption),
+            child: Text(
+              context.l10n.advertiseAbbr,
+              style: context.textTheme.caption,
+            ),
           ),
         ],
       ),
