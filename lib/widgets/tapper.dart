@@ -11,7 +11,7 @@ import 'package:flutter/services.dart';
 /// [Tapper] 默认实现点击时隐藏键盘，以及以 [HitTestBehavior.opaque] 作为默认行为。
 class Tapper extends StatelessWidget {
   const Tapper({
-    Key? key,
+    super.key,
     this.child,
     this.onTapDown,
     this.onTapUp,
@@ -51,7 +51,7 @@ class Tapper extends StatelessWidget {
     this.behavior = HitTestBehavior.opaque,
     this.excludeFromSemantics = false,
     this.dragStartBehavior = DragStartBehavior.start,
-  }) : super(key: key);
+  });
 
   final Widget? child;
   final GestureTapDownCallback? onTapDown;
@@ -149,9 +149,9 @@ class Tapper extends StatelessWidget {
 
 class TapperWrapper extends StatelessWidget {
   const TapperWrapper({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Widget child;
 
@@ -164,9 +164,9 @@ class TapperWrapper extends StatelessWidget {
 /// This wrapper can ensure there will be only one pointer event can be handled.
 class SingleTapWrapper extends StatelessWidget {
   const SingleTapWrapper({
-    Key? key,
+    super.key,
     this.child,
-  }) : super(key: key);
+  });
 
   final Widget? child;
 
